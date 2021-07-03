@@ -1,23 +1,28 @@
 # print("Hello world")
 # print("Hello world")
 
-#- написать код который выведет текущее время в момент запуска скрипта.
 
 # import datetime
 # print(datetime.datetime.today())
 
 import datetime
-
-d1=datetime.datetime.today()
-
 import random
+from operator import index
 
-what=(random.random())
+today = datetime.datetime.today()
+Result = ""
+if random.random() >= 0.5:
 
-if what >0.5:
-    print("Tomorrow:" + str(d1+datetime.timedelta(days=1)))
+    Result = ("Tomorrow:" + str(today + datetime.timedelta(days=1)))
 else:
-    print("yesterday:" + str(d1+datetime.timedelta(days=-1)))
+    Result = ("yesterday:" + str(today + datetime.timedelta(days=-1)))
 
+# open("Hello_World.py.txt", "r")
+# text = "Hello_World.py".read()
+# f = open("Hello_World.py", "r")
+f = open("Hello_World.py.txt", "a")
+for index in Result:
+    f.write(index)
+f.close()
 
-
+f = open('Hello_World.py.txt', 'r')
